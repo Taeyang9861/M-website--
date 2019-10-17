@@ -1,0 +1,52 @@
+<div>
+    <div class="index-banner">
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="//img.manhuadao.cn/upload/AdGroup201810/cjjpx720360.jpg" style="height:100%;width:100%;"></div>
+                <div class="swiper-slide"><img src="//img.manhuadao.cn/upload/AdGroup201901/eb16282222e144baa08b998b19998df7.jpg" style="height:100%;width:100%;"></div>
+                <div class="swiper-slide"><img src="//img.manhuadao.cn/upload/AdGroup201808/wjzccrf720360.jpg" style="height:100%;width:100%;"></div>
+                <div class="swiper-slide"><img src="//img.manhuadao.cn/upload/AdGroup201901/6518e794624f4712a63bdd79650c2c07.jpg" style="height:100%;width:100%;"></div>
+                <div class="swiper-slide"><img src="//img.manhuadao.cn/upload/AdGroup201905/8d0363aca6224417b7d1300f6cabb9a3.jpg" style="height:100%;width:100%;"></div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </div>
+
+    <div class="index-nav">
+        <a href="#" class="classify">
+            <div class="nav-item">
+                <div class="item-pic"></div>
+                <p class="item-text">分类</p>
+            </div>
+        </a>
+        <a href="#">
+            <div class="nav-item">
+                <div class="item-pic"></div>
+                <p class="item-text">排行</p>
+            </div>
+        </a>
+        <a href="#">
+            <div class="nav-item">
+                <div class="item-pic"></div>
+                <p class="item-text">vip专区</p>
+            </div>
+        </a>
+        <a href="#">
+            <div class="nav-item">
+                <div class="item-pic"></div>
+                <p class="item-text">历史</p>
+            </div>
+        </a>
+    </div>
+
+    <div class="index-recommend"></div>
+
+    <div class="my-icp">
+        <a class="record" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=31011202006214" target="_blank">
+            <img class="img" src="https://wechatapp.zhuishushenqi.com/mhd/201711/gongan.jpg">
+            <div>沪公网安备 31011202006214号</div>
+        </a>
+        <div class="licence">增值电信业务经营许可证沪B2-20170022<br>网络文化经营许可证沪网文（2016）3206-227号<br>出版物经营许可证新出发沪批字第U7659号</div>
+    </div>
+</div>
+

@@ -1,0 +1,11 @@
+<header class="search-header">
+    <div class="header-back"></div>
+    <div class="header-search">
+        <span class="icon-search"></span>
+        <input class="search-input font-24" type="search" placeholder="漫画名丨作者 ^_^">
+    </div>
+    <div class="header-btn font-30">搜索</div>
+</header>
+<section class="search-recommend">
+
+</section>

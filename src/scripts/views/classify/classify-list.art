@@ -1,0 +1,12 @@
+{{each list as $value}}
+<li class="list-item">
+    <img src="{{$value.logo}}" class="item-logo">
+    <div class="item-desc">
+    <h2 class="item-title">{{$value.name}}</h2>
+    <p class="item-info">
+        {{$value.author}}
+    </p>
+    <p class="item-time">最新章节:{{$value.lastup}}</p>
+    </div>
+</li>
+{{/each}}

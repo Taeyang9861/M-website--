@@ -1,0 +1,23 @@
+{{each list as $value}}
+<section>
+    <div class="recommend-divide"></div>
+    <div class="recommend-title">
+        <div class="title-group">
+            <img src="{{$value.icon}}" alt="" class="title-icon">
+            <span class="title-text">{{$value.name}}</span>
+        </div>
+        <span class="title-more">更多></span>
+    </div>
+    <div class="recommend-type-{{$value.comicsviewtype}}">
+        {{each $value.comicslist as $type}}
+        <a href="#" class="detail">
+            <div class="item">
+                <img src="{{$type.coverurl}}" alt="" class="item-img">
+                <p class="item-title">{{$type.bigbook_name}}</p>
+                <p class="item-text">{{$type.brief}}</p>
+            </div>
+        </a>
+        {{/each $value.comicslist}}
+    </div>
+</section>
+{{/each list}}

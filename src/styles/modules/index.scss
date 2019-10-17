@@ -1,0 +1,45 @@
+header {
+    box-sizing: border-box;
+    display: flex !important;
+    justify-content: space-between;
+    align-items: center;
+    width: 10rem;
+    height: 1.2rem;
+    margin: auto;
+    padding: 0 .4rem;
+    background-color: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    .head-login {
+        width: .66666667rem;
+        height: .66666667rem;
+
+        img {
+            width: .66666667rem;
+            height: .66666667rem;
+        }
+    }
+
+    .head-logo {
+        width: 2.48rem;
+        height: .74666667rem;
+
+        img {
+            width: 2.48rem;
+            height: .74666667rem;
+        }
+    }
+
+    .head-search {
+        width: .66666667rem;
+        height: .66666667rem;
+
+        img {
+            width: .66666667rem;
+            height: .66666667rem;
+        }
+    }
+}

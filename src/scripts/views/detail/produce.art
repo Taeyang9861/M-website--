@@ -1,0 +1,38 @@
+<section class="detail-summary">少年侦探琉星因为父亲的保安公司被九月天盗窃，欠下一亿元巨债，从此沦为娇蛮公主小雪的男仆，赐名曰“灰姑娘”；小雪这个看似粉嫩嫩娇滴滴的小姑娘，背后身份竟然是身手矫捷、酷闪十足的国际大盗--九月天。</section>
+
+<div class="introduce">
+    <div class="btna"><span>作者：周洪滨</span></div>
+    <div class="btnb"><span>已完结</span> <span></span></div>
+</div>
+
+<section class="hot-recommend">
+    <p class="recommend-title font-26">热门推荐</p>
+    <div class="recommend-list">
+        <div class="list-item">
+            <div class="item-pic" style="background-image: url(&quot;//img.manhuadao.cn/bookcenter/coverimages/181575/181575_0bcf5f0c83dc44838772cc811570398c.jpg&quot;);"></div>
+            <p class="item-name font-26">星武神诀</p>
+        </div><div class="list-item">
+            <div class="item-pic" style="background-image: url(&quot;//img.manhuadao.cn/bookcenter/coverimages/173861/e4cfb1c18877415383e6603f3ab298e6.jpg&quot;);"></div>
+            <p class="item-name font-26">大话降龙</p>
+        </div><div class="list-item">
+            <div class="item-pic" style="background-image: url(&quot;//img.manhuadao.cn/bookcenter/coverimages/168407/168407_749f2be713ea464193b3b4d8e314e00a.jpg&quot;);"></div>
+            <p class="item-name font-26">斗罗大陆</p>
+        </div>
+    </div>
+</section>
+
+<footer class="detail-footer">
+    <div class="btn-fav">
+        <div class="icon-love">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAeCAMAAABzP0xhAAAAkFBMVEUAAADnNwznNwznNwznNwznNwznNwznNwznNwznNwznNwznNwznNwznNwznNwznNwznNwznNwznNwznNwznNwznNwznNwznNwznNwznNwznNwznNwznNwznNwznNwznNwznNwznNwznNwznNwznNwznNwznNwznNwznNwznNwznNwznNwznNwznNwznNwznNwyBV7cFAAAAL3RSTlMAOmxHCfeo4Bzy59G+eBYGzsKsTiwR7LF1IAsD3NfJoIN8cmdDKLeQWCTDYTSUjUgQiGYAAAFSSURBVDjLfdJXcsMwDATQJSmq9y737sROsve/XeQyTmTLfF/82AGIAXDlbkOP9O2iwlVV2D7phVsXD1KzTrPTXDPYobcLqOenLK2pJW4sm7O2vDzUkdwAG/KoLABlNKNtoZfktB9VRUopmQrcuTbzBIDkEj3R/lyi8YJcxPhjUwKunlXAbtkqMUGv87wO/8Qz7UJy02e+9xbuigIDESUyv0Oy7PDWvg6hF4DaTvHeQoMhEAkYhAQz4PgFg4xwggTrEu9NAx9Lr0Ri+lJZ21BsYbSmQjJ3JjCwHMcCFFcwWFHdtmMYTjDHRez4Lt7oaifGleLBwqhJRoW7M/PR1LThGQ8bNslIJmc7vIfDBE+qkBEGJINPDOznlHjyQW9wbYXHD7wQDtfWY6w1HYERccPDvWUZsokxLqK+ttiSkWEJKfPPfcNUwKBa0fe5qmAmguClzC/qDRvJ5XE+EQAAAABJRU5ErkJggg==">
+        </div>
+        <span class="btn-text font-28">加入收藏</span>
+    </div>
+
+    <div class="btn-read">
+        <div class="icon-book">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAeBAMAAADEAMPWAAAALVBMVEUAAAD///////////////////////////////////////////////////////+hSKubAAAADnRSTlMA8a0SxG4nGbYl5+SRSkeBIjYAAABTSURBVBjTY+BUfAcFQhMYEt/BgRiDXjsDFFQ8YpArgHHYHzK8Y4CDd8OCYyMH9zcDECNxnhogKQxgQOIY+EEVPUHjyCEr00MyADl4XzGwKcI5ewHsqnKCMHrmgwAAAABJRU5ErkJggg==">
+        </div>
+        <span class="btn-text font-28">开始阅读</span>
+    </div>
+</footer>

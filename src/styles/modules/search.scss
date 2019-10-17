@@ -1,0 +1,125 @@
+.search-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 10rem;
+    height: 1.2rem;
+    margin: 0 auto;
+    background: #e7370c;
+    position: relative;
+
+    .header-back {
+        width: .62666667rem;
+        height: .34666667rem;
+        background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC8AAAAaCAMAAAAQTvWAAAAAM1BMVEUAAAD///////////////////////////////////////////////////////////////+3leKCAAAAEHRSTlMAQBCAIPDgwGCg0HCwkDBQJD3xKAAAALJJREFUOMvtkksSgzAMQ+38IUB1/9M2QDv52Nm0W95SoxlLGlOLsStNSMEJ7RUA3c0rwIN2RED3uwUY/WbHiSWJ9SgsptXypW2O1JBA5DEesLIS5QoZUqdtKPiPJkN6a1rtjlc0QbqDu74NBN+UUKA09R+qnzhOy261rMwZlTG5H7N2xsmudM61s9zZZ2XTBXU/cTpUYXgs79Q/mTwzAFZOV78syIrOmSa4UuDhF9Dzp/8N878PvMBHvdEAAAAASUVORK5CYII=) no-repeat;
+        background-size: contain;
+        position: absolute;
+        top: .42666667rem;
+        left: .4rem;
+    }
+
+    .header-search {
+        display: flex;
+        align-items: center;
+        width: 70%;
+        border-radius: 6px;
+        position: relative;
+
+        .icon-search {
+            width: .37333333rem;
+            height: .37333333rem;
+            background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAMAAABF0y+mAAAAdVBMVEUAAACzs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Pn2ls/AAAAJnRSTlMAAwey+qV+7sC9XjIL596fl4yFdurY1MtnVk4+lG4tEMhyRyQfKQeVbn0AAAD8SURBVCjPhZJZsoMgEADBBffdaExizPb6/kd8lKVYUZP0BwPVDDNQiJmo9BPHSQJ1FWvONwz++U3FGZBkfdf1WQ1crMUNLbSPaSFPDfiDybuBksIgCwjm3AxC8UYPxdQLKLGigGictLRyLa0DwXg/eIgNHTx1KEnFFllT6eCTix1cbD0mHPdkxUGPDqc9GeJ9k/WvY4NvDSlSuXWWx12HK3tFQ3gJjU+zfb4Ue374ci0vONE8WzdcLfutAAprUXEOtqk0+NB009IKU+3i+M/UL4DaVeFRuR44pYxTXJMcBRjsaLygsZpnZR88r7Hvr/ljkYsPSBcc8dHmnvoHHOUYpdTrexcAAAAASUVORK5CYII=) no-repeat;
+            background-size: contain;
+            position: absolute;
+            top: .21333333rem;
+            left: .26666667rem;
+        }
+
+        input {
+            align-items: center;
+            width: 100%;
+            height: .8rem;
+            padding: 0 .26666667rem 0 .8rem;
+            border: none;
+            border-radius: 6px;
+            font-size: .32rem;
+        }
+
+    }
+
+    .header-btn {
+        color: #fff;
+        font-weight: 500;
+        position: absolute;
+        top: .29333333rem;
+        right: .34666667rem;
+        font-size: .4rem;
+    }
+}
+
+.search-recommend {
+    box-sizing: border-box;
+    width: 10rem;
+    margin: 0 auto;
+    padding: .4rem .26666667rem;
+
+    .recommend-title {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        font-size: .34666667rem;
+        justify-content: space-between;
+
+        .title-title {
+            color: #8b8b8b;
+        }
+
+        .title-btn {
+            display: flex;
+            align-items: center;
+            color: #8b8b8b;
+
+            .icon-refresh {
+                width: .34666667rem;
+                height: .32rem;
+                margin: 0 .08rem 0 0;
+                background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAYCAMAAADTXB33AAAAclBMVEUAAACLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4t8MqE6AAAAJXRSTlMA2+vnNzEStouEWOLKxLCaeFIqCPfxwbuTXxkM1ayffnFAI9Bstt8SVgAAAOFJREFUKM9tkOkagiAQRQdlccmtUlNbrXn/V2wmVJCv84eLR70DsHKsy6soquYEAdkBF+JK+2Iy6NEOzsw5MlFhhJXJanTL24viljH72ceiuCaXsJKye+mnAWi4ewRHze6MBQAXKScet9I203loqcCRokXZKMFjvKxD9vRtcAOvHgWvNGwHIR+1qB7+09HoEDJPQHDpMTAZRjyZJJXuzUSPDhxaOrreqTupmsPTvuNo7F0wMUWjvSIis1lxjgYr1Y13d/8PVGiSuroiU8KGFOgIB07iTXQS9pyG8p3Hokjc8b8gYx4AY0sU+QAAAABJRU5ErkJggg==) no-repeat;
+                background-size: contain;
+            }
+        }
+    }
+
+    .recommend-content {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        width: 100%;
+        margin: .4rem 0 0;
+        font-size: .37333333rem;
+
+        .recommend-item {
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: .90666667rem;
+            padding: 0 .26666667rem;
+            margin: 0 .26666667rem .26666667rem 0;
+            font-weight: 500;
+            border: 1px solid #ddd;
+            border-radius: 20px;
+            font-size: .37333333rem;
+        }
+    }
+
+    .item {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        height: 1.22666667rem;
+        padding: 0 0 0 .26666667rem;
+        font-weight: 600;
+        border-bottom: 1px solid #ddd;
+        font-size: .37333333rem;
+    }
+}

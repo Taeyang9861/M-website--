@@ -1,0 +1,22 @@
+{{each list as $value}}
+<div class="item">
+    <div class="item-user">
+        <div class="user-pic" style="background-image: url({{$value.profileimageurl}});"></div>
+        <div class="user-info">
+            <p class="info-name">{{$value.screenname}}</p>
+            <p class="info-time">{{$value.createtime}}</p>
+        </div>
+    </div>
+    <p class="item-content">{{$value.content}}</p>
+    <div class="item-btn">
+        <div class="btn-comment">
+            <div class="icon-chat"></div>
+            {{$value.replycount}}
+        </div>
+        <div class="btn-love">
+            <div class="icon-love-grey"></div>
+            {{$value.praisecount}}
+        </div>
+    </div>
+</div>
+{{/each}}
