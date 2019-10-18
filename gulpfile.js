@@ -47,7 +47,8 @@ function packJs() {
                 app: './src/scripts/app.js',
                 classify: './src/scripts/classify.js',
                 detail: './src/scripts/detail.js',
-                search: './src/scripts/search.js'
+                search: './src/scripts/search.js',
+                searchContent: './src/scripts/searchContent.js'
             },
             output: {
                 path: path.resolve(__dirname, './dev'),
@@ -70,6 +71,7 @@ function gulpServer() {
         name: 'Dist App',
         root: './dev',
         port: 8000,
+        host: '10.9.49.208',
         livereload: true,
         middleware: () => {
             return [

@@ -81,7 +81,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = "./src/scripts/search.js");
+/******/ 	return __webpack_require__(__webpack_require__.s = "./src/scripts/searchContent.js");
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -121,92 +121,59 @@ eval("var g;\n\n// This works in non-strict mode\ng = (function() {\n\treturn th
 
 /***/ }),
 
-/***/ "./src/scripts/controllers/search/search.js":
-/*!**************************************************!*\
-  !*** ./src/scripts/controllers/search/search.js ***!
-  \**************************************************/
+/***/ "./src/scripts/controllers/search/searchContent.js":
+/*!*********************************************************!*\
+  !*** ./src/scripts/controllers/search/searchContent.js ***!
+  \*********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("const searchHtml = __webpack_require__(/*! ../../views/search/search.art */ \"./src/scripts/views/search/search.art\")\r\n\r\nconst searchModule = __webpack_require__(/*! ../../models/search */ \"./src/scripts/models/search.js\")\r\n\r\nconst recommendHtml = __webpack_require__(/*! ../../views/search/recommend.art */ \"./src/scripts/views/search/recommend.art\")\r\n\r\nconst freshHtml = __webpack_require__(/*! ../../views/search/recommend-hot.art */ \"./src/scripts/views/search/recommend-hot.art\")\r\n\r\nconst hotsearchModule = __webpack_require__(/*! ../../models/search-hot */ \"./src/scripts/models/search-hot.js\")\r\n\r\nconst contentHtml = __webpack_require__(/*! ../../views/search/content.art */ \"./src/scripts/views/search/content.art\")\r\n\r\nclass Search {\r\n    constructor() {\r\n        this.render()\r\n        this.list = []\r\n        this.hotword = []\r\n    }\r\n\r\n    contentRender(list) {\r\n        let html = contentHtml({\r\n            list\r\n        })\r\n\r\n        $('.search-recommend').html(html)\r\n    }\r\n\r\n    hotWordsRender(hotword) {\r\n        let html = freshHtml({\r\n            hotword\r\n        })\r\n\r\n        $('.recommend-content').html(html)\r\n    }\r\n\r\n    /* preventShake(fun, delay) {\r\n        var timer;\r\n        return function () {\r\n            clearTimeout(timer);\r\n            timer = setTimeout(function () {\r\n                fun();\r\n            }, delay);\r\n        }\r\n    } */\r\n\r\n    async render() {\r\n        let that = this\r\n\r\n        let html = searchHtml()\r\n        $('#home').html(html)\r\n\r\n        let fresh = recommendHtml()\r\n        $('.search-recommend').html(fresh)\r\n\r\n        let hot = await hotsearchModule.get()\r\n\r\n        let hotWord = hot.info.hotWordsList\r\n\r\n        this.hotWordsRender(hotWord)\r\n\r\n        //刷新\r\n        $('.title-btn').on('click', async function () {\r\n\r\n            let hot = await hotsearchModule.get()\r\n\r\n            let hotWord = hot.info.hotWordsList\r\n\r\n            that.hotWordsRender(hotWord)\r\n        })\r\n\r\n        //输入提示\r\n        $('.search-input').on('input', async function () {\r\n\r\n            var name = $('.search-input').val()\r\n\r\n            if (name) {\r\n\r\n                let search = await searchModule.get({\r\n                    name: name\r\n                })\r\n\r\n                let list = search.info\r\n\r\n                that.contentRender(list)\r\n\r\n                $('.header-btn').on('click', function () {\r\n                    window.location.href = `searchContent.html#${name}`\r\n                })\r\n            } else {\r\n                $('.search-recommend').html(recommend)\r\n            }\r\n\r\n        })\r\n\r\n        $('.header-back').on('click', () => {\r\n            window.history.back(-1);\r\n        })\r\n\r\n    }\r\n}\r\n\r\nnew Search()\n\n//# sourceURL=webpack:///./src/scripts/controllers/search/search.js?");
+eval("const searchView = __webpack_require__(/*! ../../views/search/searchContent.art */ \"./src/scripts/views/search/searchContent.art\")\r\n\r\nconst listHtml = __webpack_require__(/*! ../../views/search/searchList.art */ \"./src/scripts/views/search/searchList.art\")\r\n\r\nconst searchMoudel = __webpack_require__(/*! ../../models/searchContent */ \"./src/scripts/models/searchContent.js\")\r\n\r\nclass Index {\r\n    constructor() {\r\n        this.render()\r\n        this.list = []\r\n    }\r\n\r\n    renderer(list) {\r\n        const html = listHtml({\r\n            list: list\r\n        })\r\n\r\n        $('.search-result-list').html(html)\r\n    }\r\n\r\n    async render() {\r\n\r\n        const html = searchView()\r\n\r\n        $('#home').html(html)\r\n\r\n        let Name = location.hash.substr(1)\r\n\r\n        $('.header-title').html(Name)\r\n\r\n        let name = escape(Name)\r\n\r\n        let search = await searchMoudel.get({\r\n            name: name\r\n        })\r\n\r\n        let list = search.info\r\n\r\n        this.renderer(list)\r\n\r\n        $('.header-back').on('click', () => {\r\n            window.history.back(-1);\r\n        })\r\n\r\n    }\r\n}\r\n\r\nnew Index()\n\n//# sourceURL=webpack:///./src/scripts/controllers/search/searchContent.js?");
 
 /***/ }),
 
-/***/ "./src/scripts/models/search-hot.js":
-/*!******************************************!*\
-  !*** ./src/scripts/models/search-hot.js ***!
-  \******************************************/
+/***/ "./src/scripts/models/searchContent.js":
+/*!*********************************************!*\
+  !*** ./src/scripts/models/searchContent.js ***!
+  \*********************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("module.exports = {\r\n    get() {\r\n        return $.ajax({\r\n            url: `/api/comic/hotsearch?apptype=8&appversion=1.0&channel=web-app&appType=8`\r\n        })\r\n    }\r\n}\n\n//# sourceURL=webpack:///./src/scripts/models/search-hot.js?");
+eval("\r\nmodule.exports = {\r\n    get({\r\n        name = ''\r\n    }) {\r\n        return $.ajax({\r\n            url: `/api/comic_v2/searchbookauthor?apptype=8&appversion=1.0&channel=web-app&name=${name}&type=2&pageno=1&pagesize=100`\r\n        })\r\n    }\r\n}\n\n//# sourceURL=webpack:///./src/scripts/models/searchContent.js?");
 
 /***/ }),
 
-/***/ "./src/scripts/models/search.js":
+/***/ "./src/scripts/searchContent.js":
 /*!**************************************!*\
-  !*** ./src/scripts/models/search.js ***!
+  !*** ./src/scripts/searchContent.js ***!
   \**************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-eval("module.exports = {\r\n    get({\r\n        name = ''\r\n    }) {\r\n        return $.ajax({\r\n            url: `/api/comic_v2/searchindex?apptype=8&appversion=1.0&channel=web-app&name=${name}&type=2`\r\n        })\r\n    }\r\n}\n\n//# sourceURL=webpack:///./src/scripts/models/search.js?");
-
-/***/ }),
-
-/***/ "./src/scripts/search.js":
-/*!*******************************!*\
-  !*** ./src/scripts/search.js ***!
-  \*******************************/
 /*! no exports provided */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _controllers_search_search__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./controllers/search/search */ \"./src/scripts/controllers/search/search.js\");\n/* harmony import */ var _controllers_search_search__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_controllers_search_search__WEBPACK_IMPORTED_MODULE_0__);\n\n\n//# sourceURL=webpack:///./src/scripts/search.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _controllers_search_searchContent__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./controllers/search/searchContent */ \"./src/scripts/controllers/search/searchContent.js\");\n/* harmony import */ var _controllers_search_searchContent__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_controllers_search_searchContent__WEBPACK_IMPORTED_MODULE_0__);\n\n\n//# sourceURL=webpack:///./src/scripts/searchContent.js?");
 
 /***/ }),
 
-/***/ "./src/scripts/views/search/content.art":
-/*!**********************************************!*\
-  !*** ./src/scripts/views/search/content.art ***!
-  \**********************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-eval("var $imports = __webpack_require__(/*! ../../../../node_modules/art-template/lib/runtime.js */ \"./node_modules/art-template/lib/runtime.js\");\nmodule.exports = function ($data) {\n    'use strict';\n    $data = $data || {};\n    var $$out = '', $each = $imports.$each, list = $data.list, $value = $data.$value, $index = $data.$index, $escape = $imports.$escape;\n    $$out += '\\r\\n';\n    $each(list, function ($value, $index) {\n        $$out += '\\r\\n<p class=\"item\">';\n        $$out += $escape($value);\n        $$out += '</p>\\r\\n';\n    });\n    return $$out;\n};\n\n//# sourceURL=webpack:///./src/scripts/views/search/content.art?");
-
-/***/ }),
-
-/***/ "./src/scripts/views/search/recommend-hot.art":
+/***/ "./src/scripts/views/search/searchContent.art":
 /*!****************************************************!*\
-  !*** ./src/scripts/views/search/recommend-hot.art ***!
+  !*** ./src/scripts/views/search/searchContent.art ***!
   \****************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("var $imports = __webpack_require__(/*! ../../../../node_modules/art-template/lib/runtime.js */ \"./node_modules/art-template/lib/runtime.js\");\nmodule.exports = function ($data) {\n    'use strict';\n    $data = $data || {};\n    var $$out = '', $each = $imports.$each, hotword = $data.hotword, $value = $data.$value, $index = $data.$index, $escape = $imports.$escape;\n    $each(hotword, function ($value, $index) {\n        $$out += '\\r\\n    <span class=\"recommend-item\">';\n        $$out += $escape($value.keyword);\n        $$out += '</span>\\r\\n';\n    });\n    return $$out;\n};\n\n//# sourceURL=webpack:///./src/scripts/views/search/recommend-hot.art?");
+eval("var $imports = __webpack_require__(/*! ../../../../node_modules/art-template/lib/runtime.js */ \"./node_modules/art-template/lib/runtime.js\");\nmodule.exports = function ($data) {\n    'use strict';\n    $data = $data || {};\n    var $$out = '';\n    $$out += '\\r\\n<header class=\"header-normal\">\\r\\n    <div class=\"header-back\"></div>\\r\\n    <span class=\"header-title\"></span>\\r\\n</header>\\r\\n<section class=\"search-result-list\"></section>\\r\\n';\n    return $$out;\n};\n\n//# sourceURL=webpack:///./src/scripts/views/search/searchContent.art?");
 
 /***/ }),
 
-/***/ "./src/scripts/views/search/recommend.art":
-/*!************************************************!*\
-  !*** ./src/scripts/views/search/recommend.art ***!
-  \************************************************/
+/***/ "./src/scripts/views/search/searchList.art":
+/*!*************************************************!*\
+  !*** ./src/scripts/views/search/searchList.art ***!
+  \*************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("var $imports = __webpack_require__(/*! ../../../../node_modules/art-template/lib/runtime.js */ \"./node_modules/art-template/lib/runtime.js\");\nmodule.exports = function ($data) {\n    'use strict';\n    $data = $data || {};\n    var $$out = '';\n    $$out += '<div class=\"recommend-title\">\\r\\n    <span class=\"title-title\">大家都在搜</span>\\r\\n    <span class=\"title-btn\">\\r\\n        <span class=\"icon-refresh\"></span>\\r\\n        刷新\\r\\n    </span>\\r\\n</div>\\r\\n<div class=\"recommend-content\">\\r\\n\\r\\n</div>';\n    return $$out;\n};\n\n//# sourceURL=webpack:///./src/scripts/views/search/recommend.art?");
-
-/***/ }),
-
-/***/ "./src/scripts/views/search/search.art":
-/*!*********************************************!*\
-  !*** ./src/scripts/views/search/search.art ***!
-  \*********************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-eval("var $imports = __webpack_require__(/*! ../../../../node_modules/art-template/lib/runtime.js */ \"./node_modules/art-template/lib/runtime.js\");\nmodule.exports = function ($data) {\n    'use strict';\n    $data = $data || {};\n    var $$out = '';\n    $$out += '<header class=\"search-header\">\\r\\n    <div class=\"header-back\"></div>\\r\\n    <div class=\"header-search\">\\r\\n        <span class=\"icon-search\"></span>\\r\\n        <input class=\"search-input font-24\" type=\"search\" placeholder=\"漫画名丨作者 ^_^\">\\r\\n    </div>\\r\\n    <div class=\"header-btn font-30\">搜索</div>\\r\\n</header>\\r\\n<section class=\"search-recommend\">\\r\\n\\r\\n</section>';\n    return $$out;\n};\n\n//# sourceURL=webpack:///./src/scripts/views/search/search.art?");
+eval("var $imports = __webpack_require__(/*! ../../../../node_modules/art-template/lib/runtime.js */ \"./node_modules/art-template/lib/runtime.js\");\nmodule.exports = function ($data) {\n    'use strict';\n    $data = $data || {};\n    var $$out = '', $each = $imports.$each, list = $data.list, $value = $data.$value, $index = $data.$index, $escape = $imports.$escape;\n    $each(list, function ($value, $index) {\n        $$out += '\\r\\n    <div class=\"list-item\">\\r\\n        <div class=\"item-pic\" style=\"background-image: url(';\n        $$out += $escape($value.coverurl);\n        $$out += ');\"></div>\\r\\n        <div class=\"item-info\">\\r\\n            <p class=\"info-book\">';\n        $$out += $escape($value.name);\n        $$out += '</p>\\r\\n            <p class=\"info-author\">';\n        $$out += $escape($value.author);\n        $$out += '</p>\\r\\n            <p class=\"info-update\">';\n        $$out += $escape($value.lastpartname);\n        $$out += '</p>\\r\\n        </div>\\r\\n    </div>\\r\\n';\n    });\n    return $$out;\n};\n\n//# sourceURL=webpack:///./src/scripts/views/search/searchList.art?");
 
 /***/ })
 

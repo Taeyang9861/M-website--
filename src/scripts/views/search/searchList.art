@@ -1,0 +1,10 @@
+{{each list as $value}}
+    <div class="list-item">
+        <div class="item-pic" style="background-image: url({{$value.coverurl}});"></div>
+        <div class="item-info">
+            <p class="info-book">{{$value.name}}</p>
+            <p class="info-author">{{$value.author}}</p>
+            <p class="info-update">{{$value.lastpartname}}</p>
+        </div>
+    </div>
+{{/each}}

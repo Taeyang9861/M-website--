@@ -1,0 +1,6 @@
+
+<header class="header-normal">
+    <div class="header-back"></div>
+    <span class="header-title"></span>
+</header>
+<section class="search-result-list"></section>

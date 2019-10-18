@@ -1,11 +1,10 @@
-<div class="recommend-title font-26">
+<div class="recommend-title">
     <span class="title-title">大家都在搜</span>
-    <span class="title-btn"><span class="icon-refresh"></span>刷新</span>
+    <span class="title-btn">
+        <span class="icon-refresh"></span>
+        刷新
+    </span>
 </div>
-<div class="recommend-content font-28">
-    <span class="recommend-item">狐瞳：天魂问道</span><span class="recommend-item">逆天嫡女：仙尊，宠上天！</span><span
-        class="recommend-item">绝世飞刀</span><span class="recommend-item">末世恋爱法则</span><span
-        class="recommend-item">纹阴师</span><span class="recommend-item">重生娱乐圈：天后归来</span><span
-        class="recommend-item">别烦我修仙</span><span class="recommend-item">妖神记</span><span
-        class="recommend-item">都市至尊系统</span><span class="recommend-item">寄养女的复仇</span>
+<div class="recommend-content">
+
 </div>

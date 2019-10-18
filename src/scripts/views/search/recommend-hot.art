@@ -1,0 +1,3 @@
+{{each hotword}}
+    <span class="recommend-item">{{$value.keyword}}</span>
+{{/each}}
