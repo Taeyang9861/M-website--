@@ -2894,14 +2894,14 @@
         <div class="icon-love">
             <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAeCAMAAABzP0xhAAAAkFBMVEUAAADnNwznNwznNwznNwznNwznNwznNwznNwznNwznNwznNwznNwznNwznNwznNwznNwznNwznNwznNwznNwznNwznNwznNwznNwznNwznNwznNwznNwznNwznNwznNwznNwznNwznNwznNwznNwznNwznNwznNwznNwznNwznNwznNwznNwznNwznNwznNwyBV7cFAAAAL3RSTlMAOmxHCfeo4Bzy59G+eBYGzsKsTiwR7LF1IAsD3NfJoIN8cmdDKLeQWCTDYTSUjUgQiGYAAAFSSURBVDjLfdJXcsMwDATQJSmq9y737sROsve/XeQyTmTLfF/82AGIAXDlbkOP9O2iwlVV2D7phVsXD1KzTrPTXDPYobcLqOenLK2pJW4sm7O2vDzUkdwAG/KoLABlNKNtoZfktB9VRUopmQrcuTbzBIDkEj3R/lyi8YJcxPhjUwKunlXAbtkqMUGv87wO/8Qz7UJy02e+9xbuigIDESUyv0Oy7PDWvg6hF4DaTvHeQoMhEAkYhAQz4PgFg4xwggTrEu9NAx9Lr0Ri+lJZ21BsYbSmQjJ3JjCwHMcCFFcwWFHdtmMYTjDHRez4Lt7oaifGleLBwqhJRoW7M/PR1LThGQ8bNslIJmc7vIfDBE+qkBEGJINPDOznlHjyQW9wbYXHD7wQDtfWY6w1HYERccPDvWUZsokxLqK+ttiSkWEJKfPPfcNUwKBa0fe5qmAmguClzC/qDRvJ5XE+EQAAAABJRU5ErkJggg==">
         </div>
-        <span class="btn-text font-28">加入收藏</span>
+        <span class="btn-text">加入收藏</span>
     </div>
 
     <div class="btn-read">
         <div class="icon-book">
             <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAeBAMAAADEAMPWAAAALVBMVEUAAAD///////////////////////////////////////////////////////+hSKubAAAADnRSTlMA8a0SxG4nGbYl5+SRSkeBIjYAAABTSURBVBjTY+BUfAcFQhMYEt/BgRiDXjsDFFQ8YpArgHHYHzK8Y4CDd8OCYyMH9zcDECNxnhogKQxgQOIY+EEVPUHjyCEr00MyADl4XzGwKcI5ewHsqnKCMHrmgwAAAABJRU5ErkJggg==">
         </div>
-        <span class="btn-text font-28">开始阅读</span>
+        <span class="btn-text">开始阅读</span>
     </div>
 </footer>
 </section>

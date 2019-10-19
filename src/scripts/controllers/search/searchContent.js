@@ -26,7 +26,9 @@ class Index {
 
         let Name = location.hash.substr(1)
 
-        $('.header-title').html(Name)
+        let title = decodeURIComponent(Name)
+
+        $('.header-title').html(title)
 
         let name = escape(Name)
 

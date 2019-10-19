@@ -1,0 +1,14 @@
+<header class="header-tabs">
+    <div class="header-back"></div>
+    <div class="header-group">
+        <div class="header-title">收藏</div>
+        <div class="header-title active">历史</div>
+    </div>
+</header>
+
+<section class="comic-cue">
+    <div class="cue">
+        <div class="cue-pic"></div>
+        <p class="fav-text">还未欣赏过任何漫画哦~</p>
+    </div>
+</section>

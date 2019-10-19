@@ -23,12 +23,20 @@ class Content {
         let $main = $('main')
         $main.html(positionHtml)
 
+        $('.head-login').on('click', function () {
+            window.location.href = 'login.html'
+        })
+
         $('.head-search').on('click', function () {
             window.location.href = 'search.html'
         })
 
         $('.index-nav .classify').on('click', function () {
             window.location.href = 'classify.html'
+        })
+
+        $('.index-nav .history').on('click', function () {
+            window.location.href = 'history.html'
         })
 
         new Swiper('.swiper-container', {
@@ -49,8 +57,11 @@ class Content {
 
         this.renderRecommend(list)
 
-        $('.detail').on('click', function () {
-            window.location.href = 'detail.html'
+        $('.item').on('click', function () {
+
+            let bigbookid = this.getAttribute('bookid')
+
+            window.location.href = `detail.html?${bigbookid}`
         })
 
         new BScroll.default($('main ').get(0), {

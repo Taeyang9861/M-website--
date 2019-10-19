@@ -1,9 +1,13 @@
-<section class="detail-summary">少年侦探琉星因为父亲的保安公司被九月天盗窃，欠下一亿元巨债，从此沦为娇蛮公主小雪的男仆，赐名曰“灰姑娘”；小雪这个看似粉嫩嫩娇滴滴的小姑娘，背后身份竟然是身手矫捷、酷闪十足的国际大盗--九月天。</section>
+
+{{each list}}
+<section class="detail-summary">{{$value.brief}}</section>
 
 <div class="introduce">
-    <div class="btna"><span>作者：周洪滨</span></div>
-    <div class="btnb"><span>已完结</span> <span></span></div>
+    <div class="btna"><span>作者: {{$value.bigbook_author}}</span></div>
+    <div class="btnb"><span>{{$value.lastpartname}}</span> <span></span></div>
 </div>
+
+{{/each}}
 
 <section class="hot-recommend">
     <p class="recommend-title font-26">热门推荐</p>

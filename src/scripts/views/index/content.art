@@ -31,7 +31,7 @@
                 <p class="item-text">vip专区</p>
             </div>
         </a>
-        <a href="#">
+        <a href="#" class="history">
             <div class="nav-item">
                 <div class="item-pic"></div>
                 <p class="item-text">历史</p>

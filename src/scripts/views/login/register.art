@@ -1,0 +1,19 @@
+<section class="register-main">
+    <p class="input-group">
+        <label>邮<span class="hide">邮箱</span>箱：</label>
+        <input type="text" placeholder="请输入你的邮箱">
+    </p>
+    <p class="input-group password">
+        <label>密<span class="hide">密码</span>码：</label>
+        <input type="password" placeholder="请设置6-16位的字母、数字、符号的密码">
+    </p>
+    <p class="input-group password">
+        <label>确认密码：</label>
+        <input type="password" placeholder="请再次输入你的密码">
+    </p>
+    <div class="register-btn">注册</div>
+</section>
+
+<footer class="register-footer">
+    <p class="content">已有账号？马上<span class="go-login">登录</span></p>
+</footer>

@@ -1,0 +1,29 @@
+<header class="header-normal">
+    <div class="header-back"></div>
+    <span class="header-title">我的</span>
+</header>
+
+<section class="mine-login">
+    <div class="login-pic"></div>
+    <p class="login-btn">登录/注册</p>
+</section>
+
+<section class="mine-menu">
+
+    <a class="menu-item" href="favorite.html?cpid=0">
+        <span class="icon-fav"></span>
+        <span class="item-text">收藏</span>
+    </a>
+    <a class="menu-item" href="history.html?cpid=0">
+        <span class="icon-clock"></span>
+        <span class="item-text">历史</span>
+    </a>
+    <a class="menu-item" href="about.html?cpid=0">
+        <span class="icon-mhd"></span>
+        <span class="item-text">关于漫画岛</span>
+    </a>
+    <a class="menu-item" href="feedback.html?cpid=0">
+        <span class="icon-pencil"></span>
+        <span class="item-text">反馈</span>
+    </a>
+</section>

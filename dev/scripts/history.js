@@ -81,7 +81,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = "./src/scripts/searchContent.js");
+/******/ 	return __webpack_require__(__webpack_require__.s = "./src/scripts/history.js");
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -121,59 +121,37 @@ eval("var g;\n\n// This works in non-strict mode\ng = (function() {\n\treturn th
 
 /***/ }),
 
-/***/ "./src/scripts/controllers/search/searchContent.js":
-/*!*********************************************************!*\
-  !*** ./src/scripts/controllers/search/searchContent.js ***!
-  \*********************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-eval("const searchView = __webpack_require__(/*! ../../views/search/searchContent.art */ \"./src/scripts/views/search/searchContent.art\")\r\n\r\nconst listHtml = __webpack_require__(/*! ../../views/search/searchList.art */ \"./src/scripts/views/search/searchList.art\")\r\n\r\nconst searchMoudel = __webpack_require__(/*! ../../models/searchContent */ \"./src/scripts/models/searchContent.js\")\r\n\r\nclass Index {\r\n    constructor() {\r\n        this.render()\r\n        this.list = []\r\n    }\r\n\r\n    renderer(list) {\r\n        const html = listHtml({\r\n            list: list\r\n        })\r\n\r\n        $('.search-result-list').html(html)\r\n    }\r\n\r\n    async render() {\r\n\r\n        const html = searchView()\r\n\r\n        $('#home').html(html)\r\n\r\n        let Name = location.hash.substr(1)\r\n\r\n        let title = decodeURIComponent(Name)\r\n\r\n        $('.header-title').html(title)\r\n\r\n        let name = escape(Name)\r\n\r\n        let search = await searchMoudel.get({\r\n            name: name\r\n        })\r\n\r\n        let list = search.info\r\n\r\n        this.renderer(list)\r\n\r\n        $('.header-back').on('click', () => {\r\n            window.history.back(-1);\r\n        })\r\n\r\n    }\r\n}\r\n\r\nnew Index()\n\n//# sourceURL=webpack:///./src/scripts/controllers/search/searchContent.js?");
-
-/***/ }),
-
-/***/ "./src/scripts/models/searchContent.js":
-/*!*********************************************!*\
-  !*** ./src/scripts/models/searchContent.js ***!
-  \*********************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-eval("\r\nmodule.exports = {\r\n    get({\r\n        name = ''\r\n    }) {\r\n        return $.ajax({\r\n            url: `/api/comic_v2/searchbookauthor?apptype=8&appversion=1.0&channel=web-app&name=${name}&type=2&pageno=1&pagesize=100`\r\n        })\r\n    }\r\n}\n\n//# sourceURL=webpack:///./src/scripts/models/searchContent.js?");
-
-/***/ }),
-
-/***/ "./src/scripts/searchContent.js":
-/*!**************************************!*\
-  !*** ./src/scripts/searchContent.js ***!
-  \**************************************/
-/*! no exports provided */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _controllers_search_searchContent__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./controllers/search/searchContent */ \"./src/scripts/controllers/search/searchContent.js\");\n/* harmony import */ var _controllers_search_searchContent__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_controllers_search_searchContent__WEBPACK_IMPORTED_MODULE_0__);\n\n\n//# sourceURL=webpack:///./src/scripts/searchContent.js?");
-
-/***/ }),
-
-/***/ "./src/scripts/views/search/searchContent.art":
+/***/ "./src/scripts/controllers/history/history.js":
 /*!****************************************************!*\
-  !*** ./src/scripts/views/search/searchContent.art ***!
+  !*** ./src/scripts/controllers/history/history.js ***!
   \****************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("var $imports = __webpack_require__(/*! ../../../../node_modules/art-template/lib/runtime.js */ \"./node_modules/art-template/lib/runtime.js\");\nmodule.exports = function ($data) {\n    'use strict';\n    $data = $data || {};\n    var $$out = '';\n    $$out += '\\r\\n<header class=\"header-normal\">\\r\\n    <div class=\"header-back\"></div>\\r\\n    <span class=\"header-title\"></span>\\r\\n</header>\\r\\n<section class=\"search-result-list\"></section>\\r\\n';\n    return $$out;\n};\n\n//# sourceURL=webpack:///./src/scripts/views/search/searchContent.art?");
+eval("const historyHtml = __webpack_require__(/*! ../../views/history/history.art */ \"./src/scripts/views/history/history.art\")\r\n\r\nclass Index {\r\n    constructor() {\r\n        this.render()\r\n    }\r\n\r\n    render() {\r\n        let html = historyHtml()\r\n\r\n        $('#home').html(html)\r\n\r\n        $('.header-back').on('click', function () {\r\n            window.history.back(-1)\r\n        })\r\n\r\n        $('.header-title').eq(0).on('click', function () {\r\n            $('.header-title').eq(0).addClass('active').siblings().removeClass('active')\r\n\r\n            let userInfoStrS = sessionStorage.getItem(\"userInfo\")\r\n            let userinfo = JSON.parse(userInfoStrS)[0].email\r\n\r\n            let userInfoStrL = localStorage.getItem(\"userInfo\")\r\n            let userInfo = JSON.parse(userInfoStrL)\r\n\r\n            let result = $.grep(userInfo, (item) => {\r\n                return (item.email == userinfo)\r\n            })\r\n\r\n            console.log(result);\r\n\r\n\r\n            if (result) {\r\n\r\n                let sectionHtml = `\r\n                <section class=\"favorite-content\">\r\n                    <div class=\"item\">\r\n                        <div class=\"item-pic\" style=\"background-image: ${result[0].bookImg}\"></div>\r\n                        <p class=\"item-text\">${result[0].bookName}</p>\r\n                    </div>\r\n                </section>\r\n                `\r\n\r\n                $('.comic-cue').css('display', 'none')\r\n                $('#home').append(sectionHtml)\r\n            }\r\n\r\n        })\r\n\r\n        $('.header-title').eq(1).on('click', function () {\r\n            $('.header-title').eq(1).addClass('active').siblings().removeClass('active')\r\n        })\r\n    }\r\n}\r\n\r\nnew Index()\n\n//# sourceURL=webpack:///./src/scripts/controllers/history/history.js?");
 
 /***/ }),
 
-/***/ "./src/scripts/views/search/searchList.art":
-/*!*************************************************!*\
-  !*** ./src/scripts/views/search/searchList.art ***!
-  \*************************************************/
+/***/ "./src/scripts/history.js":
+/*!********************************!*\
+  !*** ./src/scripts/history.js ***!
+  \********************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _controllers_history_history__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./controllers/history/history */ \"./src/scripts/controllers/history/history.js\");\n/* harmony import */ var _controllers_history_history__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_controllers_history_history__WEBPACK_IMPORTED_MODULE_0__);\n\n\n//# sourceURL=webpack:///./src/scripts/history.js?");
+
+/***/ }),
+
+/***/ "./src/scripts/views/history/history.art":
+/*!***********************************************!*\
+  !*** ./src/scripts/views/history/history.art ***!
+  \***********************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("var $imports = __webpack_require__(/*! ../../../../node_modules/art-template/lib/runtime.js */ \"./node_modules/art-template/lib/runtime.js\");\nmodule.exports = function ($data) {\n    'use strict';\n    $data = $data || {};\n    var $$out = '', $each = $imports.$each, list = $data.list, $value = $data.$value, $index = $data.$index, $escape = $imports.$escape;\n    $each(list, function ($value, $index) {\n        $$out += '\\r\\n    <div class=\"list-item\">\\r\\n        <div class=\"item-pic\" style=\"background-image: url(';\n        $$out += $escape($value.coverurl);\n        $$out += ');\"></div>\\r\\n        <div class=\"item-info\">\\r\\n            <p class=\"info-book\">';\n        $$out += $escape($value.name);\n        $$out += '</p>\\r\\n            <p class=\"info-author\">';\n        $$out += $escape($value.author);\n        $$out += '</p>\\r\\n            <p class=\"info-update\">';\n        $$out += $escape($value.lastpartname);\n        $$out += '</p>\\r\\n        </div>\\r\\n    </div>\\r\\n';\n    });\n    return $$out;\n};\n\n//# sourceURL=webpack:///./src/scripts/views/search/searchList.art?");
+eval("var $imports = __webpack_require__(/*! ../../../../node_modules/art-template/lib/runtime.js */ \"./node_modules/art-template/lib/runtime.js\");\nmodule.exports = function ($data) {\n    'use strict';\n    $data = $data || {};\n    var $$out = '';\n    $$out += '<header class=\"header-tabs\">\\r\\n    <div class=\"header-back\"></div>\\r\\n    <div class=\"header-group\">\\r\\n        <div class=\"header-title\">收藏</div>\\r\\n        <div class=\"header-title active\">历史</div>\\r\\n    </div>\\r\\n</header>\\r\\n\\r\\n<section class=\"comic-cue\">\\r\\n    <div class=\"cue\">\\r\\n        <div class=\"cue-pic\"></div>\\r\\n        <p class=\"fav-text\">还未欣赏过任何漫画哦~</p>\\r\\n    </div>\\r\\n</section>';\n    return $$out;\n};\n\n//# sourceURL=webpack:///./src/scripts/views/history/history.art?");
 
 /***/ })
 

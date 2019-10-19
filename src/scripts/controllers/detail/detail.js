@@ -1,5 +1,7 @@
 const detailHtml = require('../../views/detail/layout-detail.art')
 
+const recommendModel = require('../../models/recommend')
+
 class Index {
     bindClick() {
         //页面切换
@@ -8,7 +10,24 @@ class Index {
 
     async render() {
 
-        let html = detailHtml()
+        let bigbookid = location.search.substr(1)
+
+        let recommend = await recommendModel.get()
+        let data = recommend.info
+        let result
+        for(var i=0;i<data.length;i++){
+            let list = data[i].comicslist
+
+            result = $.grep(list, (item) => {
+                return (item.bigbook_id == bigbookid)
+            })
+            if(result)
+                break
+        }
+
+        let html = detailHtml({
+            list: result
+        })
 
         $('#home').html(html)
 

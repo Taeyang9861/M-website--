@@ -1,9 +1,10 @@
+{{each list}}
 <div>
     <header class="detail-header-scroll">
         <div class="header-back">
             <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC8AAAAaCAMAAAAQTvWAAAAAM1BMVEUAAAD///////////////////////////////////////////////////////////////+3leKCAAAAEHRSTlMAQBCAIPDgwGCg0HCwkDBQJD3xKAAAALJJREFUOMvtkksSgzAMQ+38IUB1/9M2QDv52Nm0W95SoxlLGlOLsStNSMEJ7RUA3c0rwIN2RED3uwUY/WbHiSWJ9SgsptXypW2O1JBA5DEesLIS5QoZUqdtKPiPJkN6a1rtjlc0QbqDu74NBN+UUKA09R+qnzhOy261rMwZlTG5H7N2xsmudM61s9zZZ2XTBXU/cTpUYXgs79Q/mTwzAFZOV78syIrOmSa4UuDhF9Dzp/8N878PvMBHvdEAAAAASUVORK5CYII=">
         </div>
-        <span class="header-title">偷星九月天</span>
+        <span class="header-title">{{$value.bigbook_name}}</span>
         <div class="header-index">
             <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACoAAAApCAMAAAB0iUvHAAAAV1BMVEUAAAD///////////////////////////////////////////////////////////////////////////////////////////////////////////////+ORg7oAAAAHHRSTlMAUfcO8BQI0obY7tuO++PIsaSUaWBCLSgc8oHTGKW7vQAAATBJREFUOMvNlNtygjAURXOFCMG7qHX//3c2TRu2eCbRx66XM8BimCwCStLFYYid+oQDEodPzIBMeG+eARyPAM7vzIsB9krtAXNpm1cH9F1aWg+4a8v0I7C9qcRtC4y+bnY7wMwqM9+BXdfKNOlyoKeUrJXpxMNTTlbPpJ7IyRqZCJNVMhEmq2QiTEaYSTAbJhOZCJPVMhEma2QSyeqZZLJaploymamWTGaqJosiUyVZVMNLJh96A5g++JdkQ1J/Kfc7/OHKs5BJalypGiB6pcaffwlV74BRW6WsHgHnqS7/m6J+ARurMnYDhNXFtdoD/LaAvqEawJZzFjAVlZMn/6OalyOXdefMMJKMxZlhevkKlkm8S462ZSZBJ8P5ZT6h0UDT4+aTcDMSHx4TBObBLf4NNw0vsUbVhowAAAAASUVORK5CYII=">
         </div>
@@ -16,12 +17,12 @@
         <div class="header-group">
             <div class="header-box">
                 <div class="header-pic"
-                    style="background-image: url(https://img.manhuadao.cn/bookcenter/coverimages/168458/168458_51b101f968b547b29eba9e470147a345.jpg);">
+                    style="background-image: url({{$value.coverurl}});">
                 </div>
             </div>
             <div class="header-info">
-                <p class="info-title font-38">偷星九月天</p>
-                <p class="info-type font-26">热血 | 少女 经典 魔幻</p>
+                <p class="info-title">{{$value.bigbook_name}}</p>
+                <p class="info-type">{{$value.key_name}}</p>
                 <div class="info-star">
                     <div class="star-red"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAaCAMAAACTisy7AAAAdVBMVEUAAADnNwznNwznNwznNwznNwznNwznNwznNwznNwznNwznNwznNwznNwznNwznNwznNwznNwznNwznNwznNwznNwznNwznNwznNwznNwznNwznNwznNwznNwznNwznNwznNwznNwznNwznNwznNwznNwznNwyaicm3AAAAJnRSTlMAXVRKMBq3qpmBcU7b0KOSh313Z2FBKSQF78e+r5WOiDg1FRIOCnSKHPMAAACoSURBVCjPfdJXDoMwEEXRAVNCDxBKen/7X2JwMNJosLlfto7mw4V4YRKSsyswuswHULswwtTLbgfo7nbEXG+z1GC1pjHAkvrw06mmLMDLL4k/aAp2cOQRMZN9KcDGJCmHpebWbDU051msZhcnS9hRW2F7YvUCW47Z1mQqMOZYCSw4RgKPHHP8O3mx0bf8BGd/Wj1K6J7sRQFEiqaWN8zYZBd3bDfcjP0ADCA0VTgz3TwAAAAASUVORK5CYII="></div>
                     <div class="star-red"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAaCAMAAACTisy7AAAAdVBMVEUAAADnNwznNwznNwznNwznNwznNwznNwznNwznNwznNwznNwznNwznNwznNwznNwznNwznNwznNwznNwznNwznNwznNwznNwznNwznNwznNwznNwznNwznNwznNwznNwznNwznNwznNwznNwznNwznNwznNwyaicm3AAAAJnRSTlMAXVRKMBq3qpmBcU7b0KOSh313Z2FBKSQF78e+r5WOiDg1FRIOCnSKHPMAAACoSURBVCjPfdJXDoMwEEXRAVNCDxBKen/7X2JwMNJosLlfto7mw4V4YRKSsyswuswHULswwtTLbgfo7nbEXG+z1GC1pjHAkvrw06mmLMDLL4k/aAp2cOQRMZN9KcDGJCmHpebWbDU051msZhcnS9hRW2F7YvUCW47Z1mQqMOZYCSw4RgKPHHP8O3mx0bf8BGd/Wj1K6J7sRQFEiqaWN8zYZBd3bDfcjP0ADCA0VTgz3TwAAAAASUVORK5CYII="></div>
@@ -29,14 +30,15 @@
                     <div class="star-red"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAaCAMAAACTisy7AAAAdVBMVEUAAADnNwznNwznNwznNwznNwznNwznNwznNwznNwznNwznNwznNwznNwznNwznNwznNwznNwznNwznNwznNwznNwznNwznNwznNwznNwznNwznNwznNwznNwznNwznNwznNwznNwznNwznNwznNwznNwznNwyaicm3AAAAJnRSTlMAXVRKMBq3qpmBcU7b0KOSh313Z2FBKSQF78e+r5WOiDg1FRIOCnSKHPMAAACoSURBVCjPfdJXDoMwEEXRAVNCDxBKen/7X2JwMNJosLlfto7mw4V4YRKSsyswuswHULswwtTLbgfo7nbEXG+z1GC1pjHAkvrw06mmLMDLL4k/aAp2cOQRMZN9KcDGJCmHpebWbDU051msZhcnS9hRW2F7YvUCW47Z1mQqMOZYCSw4RgKPHHP8O3mx0bf8BGd/Wj1K6J7sRQFEiqaWN8zYZBd3bDfcjP0ADCA0VTgz3TwAAAAASUVORK5CYII="></div>
                     <div class="star-white"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAaCAMAAACTisy7AAAAbFBMVEUAAAD///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////8+T+BWAAAAI3RSTlMAgKxLLdO2lpOIc2pgU09iQjcpJBoZFQwF8d7HvqWgjXpaSLLbMHUAAAClSURBVCjPfdJZEoMgEEXRFtQYpzhr5uHtf4+RkFR1kOZ+AafgA6C/xmgkqQXIRIwA1IJNWEsF3MNUeq2DzYvZF/MtzRq/4oWt91WkTuAl1/w1GDpAaBfTDIga2Il4PTcXTJPp4bWK3anb04CgpXOtvIJYhYMdBXZqjip0bOJgxvHoYMpsgk2VZ3xKGLYw3dp1WF3c71DbF7LpFMDA9d6zWaMaMr0BfKwwQAvWiXQAAAAASUVORK5CYII="></div>
                 </div>
-                <p class="info-fans font-26">人气：21.07亿</p>
+                <p class="info-fans">人气：{{$value.collectcount}}</p>
             </div>
         </div>
     </header>
     <section class="detail-tab">
         <div data-to="produce" class="tab-item tab-border">简介</div>
         <div data-to="catalog" class="tab-item tab-border active">目录</div>
-        <div data-to="comment" class="tab-item">评论(3.70w)</div>
+        <div data-to="comment" class="tab-item">评论</div>
     </section>
     <div class="content"></div>
 </div>
+{{/each}}

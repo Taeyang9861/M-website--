@@ -48,7 +48,9 @@ function packJs() {
                 classify: './src/scripts/classify.js',
                 detail: './src/scripts/detail.js',
                 search: './src/scripts/search.js',
-                searchContent: './src/scripts/searchContent.js'
+                searchContent: './src/scripts/searchContent.js',
+                login: './src/scripts/login.js',
+                history: './src/scripts/history.js'
             },
             output: {
                 path: path.resolve(__dirname, './dev'),
