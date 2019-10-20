@@ -18,24 +18,23 @@ class Index {
             $('.header-title').eq(0).addClass('active').siblings().removeClass('active')
 
             let userInfoStrS = sessionStorage.getItem("userInfo")
-            let userinfo = JSON.parse(userInfoStrS)[0].email
+            let userinfo = JSON.parse(userInfoStrS).email
 
             let userInfoStrL = localStorage.getItem("userInfo")
             let userInfo = JSON.parse(userInfoStrL)
 
-            let result = $.grep(userInfo, (item) => {
-                return (item.email == userinfo)
+            let result = userInfo.filter((index) => {
+                return ($(this).email == userinfo )
             })
 
-            console.log(result);
-
+            let src = result[0].bookImg
 
             if (result) {
 
                 let sectionHtml = `
                 <section class="favorite-content">
                     <div class="item">
-                        <div class="item-pic" style="background-image: ${result[0].bookImg}"></div>
+                        <div class="item-pic"></div>
                         <p class="item-text">${result[0].bookName}</p>
                     </div>
                 </section>
@@ -43,6 +42,8 @@ class Index {
 
                 $('.comic-cue').css('display', 'none')
                 $('#home').append(sectionHtml)
+
+                $('.item-pic').css('background-image', src)
             }
 
         })

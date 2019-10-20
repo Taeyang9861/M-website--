@@ -11,19 +11,18 @@ class Catalog {
 
             let bookName = $('.info-title').html()
             let bookImg = $('.header-pic').css('background-image')
-            let scinfo = {
-                bookName,
-                bookImg
-            }
+
+
 
             let userInfoStrS = sessionStorage.getItem("userInfo")
-            let userinfo = JSON.parse(userInfoStrS)[0].email
+            var userinfo = JSON.parse(userInfoStrS).email
+
 
             let userInfoStrL = localStorage.getItem("userInfo")
             let userInfo = JSON.parse(userInfoStrL)
 
-            let result = $.grep(userInfo, (item) => {
-                return (item.email == userinfo)
+            let result = userInfo.filter((index) => {
+                return ($(this).email == userinfo )
             })
 
             result[0].bookName = bookName
