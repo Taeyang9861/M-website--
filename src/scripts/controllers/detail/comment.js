@@ -20,13 +20,17 @@ class Comment {
     }
 
     async render() {
+        let bigbookid = location.search.substr(1)
+
         let html = commentHtml()
 
         $('.content').html(html)
 
         let that = this
 
-        let commentData = await commentModel.get({})
+        let commentData = await commentModel.get({
+            bigbookid: bigbookid
+        })
 
         let list = commentData.info.list
 
@@ -36,7 +40,8 @@ class Comment {
             that.pageno++
 
             let result = await commentModel.get({
-                pageno: that.pageno
+                pageno: that.pageno,
+                bigbookid: bigbookid
             })
 
             let newList = result.info.list

@@ -1,6 +1,7 @@
 module.exports = {
     get({
-        pageno = 1
+        pageno = 1,
+        bigbookid = ''
     }) {
         return $.ajax({
 
@@ -8,7 +9,7 @@ module.exports = {
 
             url: `/api/comic_v2/bloglist?apptype=8&appversion=1.0&channel=web-app`,
 
-            data: `{"type":3,"pageno":${pageno},"pagesize":20,"userid":null,"bigbookid":"13543"}`
+            data: `{"type":3,"pageno":${pageno},"pagesize":20,"userid":null,"bigbookid":"${bigbookid}"}`
         })
     }
 }

@@ -7,8 +7,8 @@
 <main class="content">
     <section class="login-main">
         <div class="input-group">
-            <label>邮 箱：</label>
-            <input type="text" placeholder="请输入您的邮箱">
+            <label>账 号：</label>
+            <input type="text" placeholder="请输入您的账号">
         </div>
         <div class="input-group password">
             <label>密 码：</label>

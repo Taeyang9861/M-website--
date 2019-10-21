@@ -168,56 +168,50 @@
             justify-content: space-between;
             padding: 0 .2933333rem;
 
-            .detail {
+            .item {
+                width: 2.96rem;
+                margin: 0 0 .586669rem;
 
-                .item {
+                .item-img {
                     width: 2.96rem;
-                    margin: 0 0 .586669rem;
-
-                    .item-img {
-                        width: 2.96rem;
-                        height: 3.94666667rem;
-                        margin: 0 0 .13333333rem;
-                        border: 0;
-                    }
-
-                    .item-title {
-                        max-width: 100%;
-                        margin: 0 0 .08rem;
-                        color: #3a3a3a;
-                        text-overflow: ellipsis;
-                        overflow: hidden;
-                        white-space: nowrap;
-                        font-size: .37333333rem;
-                    }
-
-                    .item-text {
-                        max-width: 10rem;
-                        color: #8d8d8d;
-                        text-overflow: ellipsis;
-                        overflow: hidden;
-                        white-space: nowrap;
-                        font-size: .32rem;
-                    }
-
+                    height: 3.94666667rem;
+                    margin: 0 0 .13333333rem;
+                    border: 0;
                 }
+
+                .item-title {
+                    max-width: 100%;
+                    margin: 0 0 .08rem;
+                    color: #3a3a3a;
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+                    white-space: nowrap;
+                    font-size: .37333333rem;
+                }
+
+                .item-text {
+                    max-width: 10rem;
+                    color: #8d8d8d;
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+                    white-space: nowrap;
+                    font-size: .32rem;
+                }
+
             }
 
-            .detail:nth-child(1) {
 
-                .item {
-                    width: 100%;
-                    margin: 0 0 .48rem;
+            .item:nth-child(1) {
+                width: 100%;
+                margin: 0 0 .48rem;
 
-                    .item-img {
-                        width: 9.4666667rem;
-                        height: 4.8rem;
-                        margin: 0 0 .1333333rem;
-                        border: 0;
-                    }
+                .item-img {
+                    width: 9.4666667rem;
+                    height: 4.8rem;
+                    margin: 0 0 .1333333rem;
+                    border: 0;
                 }
             }
-
 
         }
 

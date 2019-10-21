@@ -881,15 +881,15 @@ a {
     align-content: center;
     justify-content: space-between;
     padding: 0 .2933333rem; }
-    .index-recommend section .recommend-type-2 .detail .item {
+    .index-recommend section .recommend-type-2 .item {
       width: 2.96rem;
       margin: 0 0 .586669rem; }
-      .index-recommend section .recommend-type-2 .detail .item .item-img {
+      .index-recommend section .recommend-type-2 .item .item-img {
         width: 2.96rem;
         height: 3.94666667rem;
         margin: 0 0 .13333333rem;
         border: 0; }
-      .index-recommend section .recommend-type-2 .detail .item .item-title {
+      .index-recommend section .recommend-type-2 .item .item-title {
         max-width: 100%;
         margin: 0 0 .08rem;
         color: #3a3a3a;
@@ -897,17 +897,17 @@ a {
         overflow: hidden;
         white-space: nowrap;
         font-size: .37333333rem; }
-      .index-recommend section .recommend-type-2 .detail .item .item-text {
+      .index-recommend section .recommend-type-2 .item .item-text {
         max-width: 10rem;
         color: #8d8d8d;
         text-overflow: ellipsis;
         overflow: hidden;
         white-space: nowrap;
         font-size: .32rem; }
-    .index-recommend section .recommend-type-2 .detail:nth-child(1) .item {
+    .index-recommend section .recommend-type-2 .item:nth-child(1) {
       width: 100%;
       margin: 0 0 .48rem; }
-      .index-recommend section .recommend-type-2 .detail:nth-child(1) .item .item-img {
+      .index-recommend section .recommend-type-2 .item:nth-child(1) .item-img {
         width: 9.4666667rem;
         height: 4.8rem;
         margin: 0 0 .1333333rem;
